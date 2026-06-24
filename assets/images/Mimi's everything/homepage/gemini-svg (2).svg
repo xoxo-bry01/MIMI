@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE5EC" />
+      <stop offset="50%" stop-color="#F0D6FA" />
+      <stop offset="100%" stop-color="#E8C5E5" />
+    </linearGradient>
+    
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFF0F5" stop-opacity="0.7" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <path d="M 150 100 Q 150 120 170 120 Q 150 120 150 140 Q 150 120 130 120 Q 150 120 150 100 Z" fill="#FFF9A6" filter="url(#glow)" />
+  <polygon points="650,150 653,157 660,157 655,162 657,169 650,165 643,169 645,162 640,157 647,157" fill="#FFFFFF" />
+  
+  <path d="M 200 250 C 180 220, 150 220, 150 240 C 150 260, 180 280, 200 295 C 220 280, 250 260, 250 240 C 250 220, 220 220, 200 250 Z" fill="#FFC2D1" opacity="0.5" transform="scale(0.6) translate(100, 100)" />
+  <path d="M 600 350 C 580 320, 550 320, 550 340 C 550 360, 580 380, 600 395 C 620 380, 650 360, 650 340 C 650 320, 620 320, 600 350 Z" fill="#FFB3C6" opacity="0.4" transform="scale(0.5) translate(500, 200)" />
+
+  <g fill="url(#cloudGrad)">
+    <circle cx="100" cy="580" r="120" />
+    <circle cx="280" cy="600" r="140" />
+    <circle cx="520" cy="600" r="150" />
+    <circle cx="720" cy="570" r="110" />
+    <circle cx="400" cy="620" r="130" />
+  </g>
+
+  <g transform="translate(400, 300)">
+    <path d="M 0 -160 Q 0 0 160 0 Q 0 0 0 160 Q 0 0 -160 0 Q 0 0 0 -160 Z" fill="#FFF4BD" opacity="0.5" filter="url(#glow)" />
+    <path d="M 200 280 Q 280 290 290 290 Q 280 290 280 300 Q 280 290 270 290 Q 280 290 280 280 Z" fill="#FFFFFF" filter="url(#glow)" transform="translate(-480,-280)" />
+    <path d="M 520 260 Q 520 270 530 270 Q 520 270 520 280 Q 520 270 510 270 Q 520 270 520 260 Z" fill="#FFF4BD" filter="url(#glow)" transform="translate(-480,-280)" />
+  </g>
+</svg>

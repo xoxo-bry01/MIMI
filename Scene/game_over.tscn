@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ulxkjwd0imqv"]
+
+[ext_resource type="Script" uid="uid://10qxjak72sk5" path="res://scripts/game_over.gd" id="1_xnpu1"]
+[ext_resource type="Texture2D" uid="uid://1sqev3m486uf" path="res://assets/images/Player/gemini-svg.svg" id="2_3p3j6"]
+[ext_resource type="FontFile" uid="uid://2i072f4x2m8y" path="res://assets/images/Mimi's everything/PressStart2P-Regular.ttf" id="3_t757r"]
+[ext_resource type="AudioStream" uid="uid://esanpriw36ux" path="res://assets/sounds/gameover.mp3" id="4_qf1nx"]
+
+[sub_resource type="Theme" id="Theme_up0eu"]
+default_font = ExtResource("3_t757r")
+
+[node name="GameOver" type="Control" unique_id=28465516]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_xnpu1")
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=811280682]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 719.0
+texture = ExtResource("2_3p3j6")
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=861388503]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.50003
+offset_top = -152.99998
+offset_right = -84.166626
+offset_bottom = -67.33331
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme = SubResource("Theme_up0eu")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7294118)
+text = "GAME OVER
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VoiceOverPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1807402996]
+stream = ExtResource("4_qf1nx")
+autoplay = true
+
+[node name="RetryButton" type="Button" parent="." unique_id=1934798754]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 437.0
+offset_right = 614.0
+offset_bottom = 468.0
+scale = Vector2(3, 3)
+text = "RETRY
+"
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=579297906]
+texture_filter = 1
+layout_mode = 0
+offset_left = 364.0
+offset_top = 562.0
+offset_right = 560.0
+offset_bottom = 593.0
+scale = Vector2(3, 3)
+text = "RETURN TO MAIN MENU"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

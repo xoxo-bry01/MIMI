@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ywrtowes8qqs"]
+
+[ext_resource type="Script" uid="uid://bqay1cjfyv45n" path="res://scripts/you_win.gd" id="1_2ulhl"]
+[ext_resource type="FontFile" uid="uid://l47dlgs0qtkk" path="res://assets/images/Mimi's everything/PressStart2P-Regular.ttf" id="2_ij3km"]
+[ext_resource type="Texture2D" uid="uid://dqqr4046ko3up" path="res://assets/images/Mimi's everything/homepage/gemini-svg (2).svg" id="2_pcayg"]
+
+[sub_resource type="Theme" id="Theme_pcayg"]
+default_font = ExtResource("2_ij3km")
+
+[node name="YouWin" type="Control" unique_id=1333022260]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ulhl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1841904213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pcayg")
+
+[node name="Label" type="Label" parent="." unique_id=1241429676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -221.0
+offset_right = 272.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pcayg")
+theme_override_colors/font_color = Color(0.99607843, 0.63529414, 0.76862746, 1)
+theme_override_font_sizes/font_size = 60
+text = "YOU WIN!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1358589583]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 32.0
+offset_right = -75.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=829125934]
+layout_mode = 2
+
+[node name="PLayAgain" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1289011195]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7343124, 0.95902115, 0.47744173, 1)
+theme_override_fonts/font = ExtResource("2_ij3km")
+theme_override_font_sizes/font_size = 16
+text = "PLAY AGAIN"
+
+[node name="MainMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=552521498]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95217675, 0.88101876, 0.51115876, 1)
+theme_override_fonts/font = ExtResource("2_ij3km")
+theme_override_font_sizes/font_size = 16
+text = "MAINMENU"
+
+[node name="WinnerSound" type="AudioStreamPlayer2D" parent="." unique_id=1758552970]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PLayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
